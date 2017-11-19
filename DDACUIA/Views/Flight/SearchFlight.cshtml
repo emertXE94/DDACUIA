@@ -1,0 +1,83 @@
+﻿@model IEnumerable<DDACUIA.Models.Flight>
+@{
+    ViewBag.Title = "SearchFlight";
+}
+
+<h2>SearchFlightView</h2>
+@using (Html.BeginForm("SearchFlight", "Flight", FormMethod.Post))
+{
+    <div class="row">
+        <div class="col-md-3">
+            <h5>Origin</h5> @Html.TextBox("searcho", null, new { required = "required" })
+        </div>
+        <div class="col-md-3">
+            <h5>Destination</h5> @Html.TextBox("searchd", null, new { required = "required" })
+        </div>
+        <div class="col-md-3">
+            <h5>DepartureDate</h5> @Html.TextBox("ddate", null, new { required = "required" })
+        </div>
+        <div class="col-md-3">
+            <input type="submit" value="Search" style="padding:10px" />
+        </div>
+    </div>
+}
+<br />
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FlightId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DepartureDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Origin)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Destination)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SeatType)
+            </th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @if (Model.Count() == 0)
+        {
+            <tr>
+                <td colspan="3" style="color:red">
+                    No Flights Found
+                </td>
+            </tr>
+        }
+        else
+        {
+            foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FlightId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DepartureDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Origin.City)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Destination.City)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SeatType)
+                    </td>   
+                    <td>
+                        @Html.ActionLink("Book", "Book", new { id = item.FlightId })
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+
+</table>

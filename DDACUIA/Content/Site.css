@@ -1,0 +1,58 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+.jumbotron {
+    padding: 30px;
+    margin-bottom: 30px;
+    font-size: 21px;
+    font-weight: 200;
+    height: 600px;
+    line-height: 2.1428571435;
+    color: inherit;
+    background-color: #eeeeee;
+    background-size: 100%;
+    background-image: url("https://i.ytimg.com/vi/4AlGn9K242I/maxresdefault.jpg");
+}
+
+
+.btnedit {
+    padding: 10px;
+    color: lightblue;
+    border-radius: .25rem;
+}
+
+.content {
+    background-color: aqua;
+    background-size: 100%;
+    border-radius: 25px;
+    padding: 10px;
+}
+
+.content2 {
+    background-color: chartreuse;
+    background-size: 100%;
+    border-radius: 25px;
+    padding: 10px;
+}

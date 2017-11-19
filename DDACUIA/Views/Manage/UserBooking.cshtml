@@ -1,0 +1,66 @@
+﻿@model IEnumerable<DDACUIA.Models.Booking>
+
+@{
+    ViewBag.Title = "Flight Booking Made";
+}
+
+<h2>FlightBooking</h2>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.BookingId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FlightId.FlightId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FlightId.DepartureDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FlightId.Origin)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FlightId.Destination)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FlightId.SeatType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FlightId.Price)
+            </th>
+        </tr>
+    </thead>
+
+    <tbody>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.BookingId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FlightId.FlightId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FlightId.DepartureDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FlightId.Origin.City)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FlightId.Destination.City)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FlightId.SeatType)
+            </td>
+            <td>
+                RM @Html.DisplayFor(modelItem => item.FlightId.Price)
+            </td>
+        </tr>
+    }
+        
+    </tbody>
+
+</table>

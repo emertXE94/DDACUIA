@@ -1,0 +1,57 @@
+﻿@model DDACUIA.Models.Flight
+
+@{
+    ViewBag.Title = "FlightBooking";
+}
+
+<h2>Flight Booking Confirmation</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DepartureDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DepartureDate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Origin)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Origin.City)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Destination)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Destination.City)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.SeatType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SeatType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+
+        <dd>
+            RM @Html.DisplayFor(model => model.Price)
+        </dd>
+        <dd>
+            <br />
+        </dd>
+        <dd>
+            <button class="btnedit">@Html.ActionLink("Confirm Booking", "BookingConfirmation", new { id = Model.FlightId }) </button>
+        </dd>
+    </dl>
+</div>
+
+
+
